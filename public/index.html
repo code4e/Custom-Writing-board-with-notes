@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./styles.css">
+
+    <title>Custom Board</title>
+</head>
+
+<body>
+
+    <div class="options-cont">
+        <i class="fas fa-bars"></i>
+    </div>
+    <div class="tool-cont scale-tools">
+        <img src="./Icons/Pencil.svg" alt="" class="pencil">
+        <img src="./Icons/Eraser.svg" alt="" class="eraser white">
+        <img src="./Icons/Download.svg" alt="" class="download">
+        <img src="./Icons/Upload.svg" alt="" class="upload">
+        <img src="./Icons/StickyNote.svg" alt="" class="sticky">
+        <img src="./Icons/Undo.svg" alt="" class="undo">
+        <img src="./Icons/Redo.svg" alt="" class="redo">
+    </div>
+
+    <div class="pencil-tool-cont">
+        <div class="pencil-width-cont">
+            <input type="range" min="2" max="10" value="3">
+        </div>
+        <div class="pencil-color-cont">
+            <div class="black pencil-color"></div>
+            <div class="green pencil-color"></div>
+            <div class="red pencil-color"></div>
+        </div>
+    </div>
+    <div class="eraser-tool-cont">
+        <input type="range" min="2" max="10">
+    </div>
+    <!-- <div class="sticky-cont">
+        <div class="sticky-header-cont">
+            <div class="minimize">
+                <i class="fa-solid fa-angle-up"></i>
+            </div>
+            <div class="close"><i class="fa-solid fa-xmark"></i></div>
+        </div>
+        <div class="sticky-note-cont">
+            <textarea></textarea>
+        </div>
+    </div> -->
+
+    <canvas>
+        
+    </canvas>
+
+    <template>
+        <div class="sticky-cont draggable">
+        <div class="sticky-header-cont">
+            <div class="minimize">
+                <i class="fa-solid fa-angle-up"></i>
+            </div>
+            <div class="close"><i class="fa-solid fa-xmark"></i></div>
+        </div>
+        <div class="sticky-note-cont">
+            <textarea spellcheck="false"></textarea>
+        </div>
+    </div>
+    </template>
+
+    <script src="https://cdn.socket.io/3.1.3/socket.io.min.js" integrity="sha384-cPwlPLvBTa3sKAgddT6krw0cJat7egBga3DJepJyrLl4Q9/5WLra3rrnMcyTyOnh" crossorigin="anonymous"></script>
+    <script>
+        const socket = io.connect("http://localhost:5000");
+
+    </script>
+    <script src="./script.js"></script>
+    <script src="./canvas.js"></script>
+
+</body>
+
+</html>
